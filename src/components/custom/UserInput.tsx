@@ -7,7 +7,6 @@ import axios from "axios";
 import Info from "./Info";
 
 const UserInput = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [messages, setmessages] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
