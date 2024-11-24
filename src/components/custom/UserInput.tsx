@@ -15,7 +15,7 @@ const UserInput = () => {
     const UserInput = inputRef.current?.value;
     if (UserInput) setmessages((prevMessages) => [...prevMessages, UserInput]);
     // console.log(inputRef.current?.value);
-    const response = await axios
+    await axios
       .post("/api/ask", { User_Input: UserInput })
       .then((res) => {
         setmessages((prevMessages) => [...prevMessages, res.data]);
