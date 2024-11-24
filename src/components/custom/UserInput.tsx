@@ -1,17 +1,16 @@
 "use client";
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { LuSendHorizonal } from "react-icons/lu";
 import { Button } from "../ui/button";
 import axios from "axios";
-import { useToast } from "@/hooks/use-toast";
 import Info from "./Info";
 
 const UserInput = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [messages, setmessages] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const { toast } = useToast();
+
   // console.log(inputRef.current)
   const handleClick = async () => {
     const UserInput = inputRef.current?.value;
@@ -27,12 +26,6 @@ const UserInput = () => {
         console.log(res.data);
       })
       .catch(() => {
-        toast({
-          title: "Failure 👎",
-          description: "Your message is not sent ",
-          variant: "destructive",
-          className: "fixed top-4 inset-x-0 mx-auto max-w-md",
-        });
         return { data: { success: false } };
       });
 
