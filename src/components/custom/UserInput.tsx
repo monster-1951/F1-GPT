@@ -36,7 +36,7 @@ const UserInput = () => {
   return (
     <div className="mx-auto  sm:w-[60%] rounded-xl p-4 border" >
       <div className="flex justify-center p-2 sticky top-0">
-        <Input className="bg-[#FEEFE5] " ref={inputRef}  />
+        <Input className="bg-[#FEEFE5] " ref={inputRef}  placeholder="Ask anything about Formula one racing car"/>
         <Button onClick={handleClick} className="bg-[#1D3461]">
           <LuSendHorizonal className="h-10" />
         </Button>
